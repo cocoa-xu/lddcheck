@@ -34,7 +34,7 @@ jobs:
           curl -fSL https://github.com/cocoa-xu/evision/releases/download/v0.1.34/evision-nif_2.17-aarch64-linux-gnu-0.1.34.tar.gz -o evision-nif_2.17-aarch64-linux-gnu-0.1.34.tar.gz
           tar -xf evision-nif_2.17-aarch64-linux-gnu-0.1.34.tar.gz
           cargo run -- --help
-          cargo run -- -p evision-nif_2.17-aarch64-linux-gnu-0.1.34/priv/evision.so --stdout=json --pretty-json --detail-level=version
-          cargo run -- -p evision-nif_2.17-aarch64-linux-gnu-0.1.34/priv/evision.so --stdout=json --pretty-json --detail-level=function
-          cargo run -- -p evision-nif_2.17-aarch64-linux-gnu-0.1.34/priv/evision.so --stdout=json --pretty-json --detail-level=file
+          ./target/debug/lddcheck -p evision-nif_2.17-aarch64-linux-gnu-0.1.34/priv/evision.so --stdout=json --pretty-json --detail-level=version
+          ./target/debug/lddcheck -p evision-nif_2.17-aarch64-linux-gnu-0.1.34/priv/evision.so --stdout=json --pretty-json --detail-level=function
+          ./target/debug/lddcheck -p evision-nif_2.17-aarch64-linux-gnu-0.1.34/priv/evision.so --stdout=json --pretty-json --detail-level=file
   
